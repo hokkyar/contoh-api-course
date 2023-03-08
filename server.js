@@ -3,6 +3,8 @@ const app = express()
 const port = 5000
 const cors = require('cors')
 
+app.use(cors())
+
 const data = [
   {
     nama: 'Web Design',
@@ -20,8 +22,6 @@ const data = [
     image: 'https://picsum.photos/200/300'
   },
 ]
-
-app.use(cors())
 
 app.get('/api/course', (req, res) => {
   res.status(200).json(data)
